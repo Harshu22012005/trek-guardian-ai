@@ -94,13 +94,22 @@ serve(async (req) => {
     const data = await response.json();
     const text = data.choices[0].message.content;
     
-    // Extract JSON from response
-    const jsonMatch = text.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      throw new Error("Failed to parse Gemini response");
+    // Extract JSON from response (handle markdown code blocks)
+    let jsonText = text;
+    
+    // Try to extract from markdown code blocks first
+    const codeBlockMatch = text.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
+    if (codeBlockMatch) {
+      jsonText = codeBlockMatch[1];
+    } else {
+      // Fall back to finding JSON object
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        jsonText = jsonMatch[0];
+      }
     }
 
-    const result = JSON.parse(jsonMatch[0]);
+    const result = JSON.parse(jsonText);
 
     return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
