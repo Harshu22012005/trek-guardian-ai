@@ -1,234 +1,280 @@
-🚀 Xplorevo – Adventure Guardian AI
-India’s First Real-Time Truth, Health & Fraud Safety Engine for Travellers
-(Hackathon Edition – Full‑Stack Web App)
+# 🚀 Xplorevo – Adventure Guardian AI
 
-🧭 Overview
-Adventure travel in India is booming — but so are scams, misleading reels, unsafe routes, and preventable health emergencies.
-Adventure Guardian AI, built under Xplorevo, solves this by acting as a digital safety companion that checks:
+### India’s First Real-Time Truth, Health & Fraud Safety Engine for Travellers
 
-✔ Whether online trek/reel information is accurate
+---
 
-✔ Whether a traveler is medically at risk on a given route
+## 🧭 Overview
 
-✔ Whether a payment, agent, UPI ID, or invoice is suspicious
+Adventure tourism in India is experiencing a massive surge, driven by social media inspiration, affordable travel options, and a growing curiosity for remote mountain regions. Yet this rise comes with significant and often overlooked safety challenges. Countless travellers rely on reels, trek posters, or influencer vlogs that may be outdated, exaggerated, or knowingly misleading — resulting in wrong expectations, underpreparedness, and serious medical risks. Simultaneously, scam operators and fake travel agencies have found new ways to exploit unsuspecting hikers through fraudulent UPI IDs, edited invoices, and deceptive websites.
 
-All three systems combine to generate a Verified Trek Score (0–100) — a single number that tells travelers if their trip is safe.
+Adventure Guardian AI was created to address all these issues in one unified system. It doesn’t just warn travellers — it verifies facts, predicts dangers, and flags fraud using real-time AI analysis, geodata, weather intelligence, and behavioural pattern insights. Whether someone is checking if a reel is real, evaluating if their fitness level is compatible with a high-altitude trek, or confirming if a payment request is genuine, this platform acts as a reliable safety companion.
 
-This README explains the entire build: tech stack, APIs, architecture, deployment, demo data, and how to run the project.
+The platform generates a single Verified Trek Score (0–100), helping users make informed decisions before committing time, money, and health to their adventure.
 
-🎯 Problem We’re Solving
-Indian travelers face three major risks:
+**Adventure Guardian AI**, built under Xplorevo, acts as a digital safety companion that verifies:
 
-1️⃣ Misinformation Epidemic
-Reels often exaggerate difficulty, hide real weather, crop dangerous patches, or show outdated routes.
+* ✔ Whether online trek/reel information is accurate
+* ✔ Whether a traveler is medically at risk
+* ✔ Whether a payment, agent, UPI ID, or invoice is suspicious
 
-2️⃣ Hidden Health Dangers
-Most cases of AMS, exhaustion, dehydration, and hypothermia are predictable — but travelers don’t get warnings early.
+All three systems together generate a **Verified Trek Score (0–100)** — a single number that tells travelers if their trip is safe.
 
-3️⃣ Fraud & Financial Scams
-Fake operators, fake UPI IDs, edited invoices, and WhatsApp fraud groups cause massive avoidable losses.
+---
 
-👉 There is no unified platform that verifies information, predicts risks, and flags fraud.
+## 🎯 Problem We’re Solving
 
-💡 Our Solution — Adventure Guardian AI
-A full-stack AI-powered safety engine that provides:
+Indian travelers face **three major risks**:
 
-🔍 1. Misinformation Scanner
-Upload a reel screenshot or trek poster → instantly verifies:
+### 1️⃣ Misinformation Epidemic
 
-Route accuracy (via elevation/geodata)
+Reels often exaggerate difficulty, hide real weather, crop dangerous patches, or use outdated footage.
 
-Weather authenticity
+### 2️⃣ Hidden Health Dangers
 
-Edited / AI‑generated sky
+AMS, dehydration, exhaustion, hypothermia — most are predictable with correct data.
 
-Overcrowding detection
+### 3️⃣ Fraud & Financial Scams
 
-Fake guide recognition
+Fake operators, fake UPI IDs, edited invoices, phishing pages — causing huge preventable losses.
 
-Difficulty mismatch
+👉 There is **no unified platform** that verifies information, predicts risks, and flags fraud.
 
-Output:
+---
 
-Truth Score (0–100)
+## 💡 Our Solution — Adventure Guardian AI
 
-“Misleading because…” explanation
+A full-stack AI‑powered safety engine that delivers:
 
-🩺 2. Health Risk Predictor
-Enter trek altitude, duration, fitness level → predicts:
+---
 
-AMS risk
+## 🔍 1. Misinformation Scanner
 
-Exhaustion/fatigue probability
+Upload a reel screenshot or trek poster → system verifies:
 
-Hydration requirement
+* Route accuracy via elevation/geodata
+* Weather authenticity
+* Edited / AI-generated sky
+* Overcrowding
+* Fake/unknown guides
+* Difficulty mismatch
 
-Weather-related danger
+**Output:**
 
-Recovery/fitness recommendation
+* **Truth Score (0–100)**
+* Explanation of misleading elements
 
-Output:
+---
 
-Health Score (0–100)
+## 🩺 2. Health Risk Predictor
 
-Personalized safety suggestions
+Input: altitude, duration, fitness level, temperature.
 
-🛡 3. Fraud & Scam Detector
-Upload invoice/UPI ID/website/phone number:
+Predicts:
+
+* AMS risk
+* Fatigue probability
+* Hydration need
+* Weather-related danger
+
+**Output:**
+
+* **Health Score (0–100)**
+* Personalized safety suggestions
+
+---
+
+## 🛡 3. Fraud & Scam Detector
+
+Upload invoice / UPI ID / website / phone number.
 
 Checks:
 
-Fake UPI formatting
+* Invalid UPI formatting
+* Scam keywords
+* Fake invoice patterns
+* Suspicious pricing
+* Phone identity metadata
+* Domain/website validity
 
-Scam keywords
+**Output:**
 
-Duplicate invoice patterns
+* **Fraud Score (0–100)**
+* Safe / Unsafe Badge
 
-Pricing manipulation
+---
 
-Phone reputation metadata
+## ⭐ FINAL RESULT — Verified Trek Score
 
-Domain validity
+A combined score of:
 
-Output:
+* ✔ Truth Score
+* ✔ Health Score
+* ✔ Fraud Score
 
-Fraud Score (0–100)
+→ Provides one **final safety score** (0–100) for the trek.
 
-Safe/Unsafe Badge
+---
 
-⭐ FINAL RESULT — Verified Trek Score
-A combined AI score of:
+## 🛠 Tech Stack
 
-✔ Truth
-✔ Health
-✔ Fraud
+### **Frontend**
 
-→ One final number telling the user whether to proceed or avoid.
+* React.js
+* TailwindCSS
+* React Router
+* Axios
+* Framer Motion
 
-🛠 Tech Stack (Used in Actual Implementation)
-Frontend
-React.js
+### **Backend**
 
-TailwindCSS
+* Node.js + Express
+* REST API architecture
+* Gemini API (server‑side)
+* JWT Authentication *(optional)*
+* Multer for file uploads
 
-React Router
+### **AI Layer**
 
-Axios
+* Google Gemini 1.5 Flash / Pro
+* Vision analysis
+* Text reasoning
+* Fraud pattern detection
+* Misinformation scoring logic
 
-Framer Motion (for smooth animations)
+### **Free External APIs** *(Zero billing)*
 
-Backend
-Node.js + Express
+| Purpose              | API                | Cost |
+| -------------------- | ------------------ | ---- |
+| Weather              | OpenWeatherMap     | Free |
+| Elevation            | OpenTopoData       | Free |
+| Routing              | OpenStreetMap      | Free |
+| UPI/Phone validation | Custom rule engine | Free |
+| Image metadata       | EXIF-js            | Free |
 
-REST API architecture
+---
 
-Gemini API calls handled server‑side
+## 🧪 Demo Data (For Hackathon Testing)
 
-JWT Authentication (Optional)
+### **Misinformation Demo**
 
-Multer (for file uploads)
+* Fake reel screenshot with incorrect weather
+* Trek poster with boosted contrast
+* Old route photo (2019)
 
-AI Layer
-Google Gemini 1.5 Flash / Pro
+### **Health Demo**
 
-Vision analysis
+* Trek altitude: **5200m**
+* Temperature: **–8°C**
+* Beginner-level trekker
 
-Text reasoning
+### **Fraud Demo**
 
-Fraud pattern detection
+* Fake UPI ID: `@yblx`
+* Edited invoice (PNG)
+* Phishing travel website
 
-Misinformation scoring logic
+---
 
-Free External APIs
-Used because they require zero billing / free keys:
+## 🏗 System Architecture
 
-Purpose	API	Cost
-Weather check	OpenWeatherMap Free API	Free
-Elevation/Altitude	OpenTopoData API	Free
-Map Routing	OpenStreetMap Data	Free
-UPI/Phone validation	Custom rule engine (no paid API)	Free
-Image metadata	EXIF-js	Free
-🧪 Demo Data You Should Include
-Since we’re using Gemini + free APIs, we will use demo samples for consistency:
-
-Misinformation demo
-Fake reel screenshot with wrong weather
-
-Trek poster with boosted contrast
-
-Old route photo from 2019
-
-Health demo
-Trek altitude: 5200m
-
-Temperature: -8°C
-
-Beginner‑level trekker
-
-Fraud demo
-Fake UPI: @yblx
-
-Edited invoice PNG
-
-Phishing travel website
-
-🏗 System Architecture (Simple + Hackathon‑Optimized)
+```
 Frontend (React)
       ↓
 Backend (Node.js + Express)
       ↓
 AI Layer (Gemini API)
       ↓
-External Free APIs
-(OpenWeather, OpenTopoData, OSM)
-⚙ Setup Instructions (Local Development)
-1. Clone repo
+External Free APIs (OpenWeather, OpenTopoData, OSM)
+```
+
+---
+
+## ⚙ Setup Instructions (Local Development)
+
+### 1. Clone repo
+
+```bash
 git clone https://github.com/xplorevo/adventure-guardian-ai.git
 cd adventure-guardian-ai
-2. Install backend
+```
+
+### 2. Install backend
+
+```bash
 cd backend
 npm install
-3. Add Gemini API Key
-Create .env:
+```
 
+### 3. Add Gemini API Key
+
+Create a `.env` file:
+
+```
 GEMINI_API_KEY=YOUR_KEY_HERE
-4. Start backend
+```
+
+### 4. Start backend
+
+```bash
 npm start
-5. Install & start frontend
+```
+
+### 5. Install & start frontend
+
+```bash
 cd ../frontend
 npm install
 npm run dev
-📦 API Routes (Backend)
-POST /misinfo
-Accepts image upload
-Calls Gemini Vision
-Cross-checks weather + elevation
-POST /health
-Accepts form data
+```
 
-Uses elevation + weather API
-Returns Health Score
-POST /fraud
-Accepts text or invoice file
-Extracts metadata + Gemini analysis
-GET /trek-score
-Compiles all three scores
-Returns final Verified Trek Score
+---
 
-📊 Scoring Logic
-Truth Score — 40% weight
-Weather mismatch
-Edited image probability
-Route deviation
-Overcrowding
+## 📦 API Routes (Backend)
 
-Health Score — 40% weight
-AMS probability
-Temperature stability
-Fatigue risk
-Hydration deficit
+### **POST /misinfo**
 
-Fraud Score — 20% weight
-UPI pattern
-Invoice authenticity
-Scam indicator flags
+* Accepts image upload
+* Calls Gemini Vision
+* Cross-checks weather + elevation
+
+### **POST /health**
+
+* Accepts trek form data
+* Uses elevation + weather API
+* Returns Health Score
+
+### **POST /fraud**
+
+* Accepts text or invoice file
+* Extracts metadata
+* Gemini fraud analysis
+
+### **GET /trek-score**
+
+* Combines Truth + Health + Fraud scores
+* Returns final Verified Trek Score
+
+---
+
+## 📊 Scoring Logic
+
+### **Truth Score — 40% Weight**
+
+* Weather mismatch
+* Edited image probability
+* Route deviation
+* Overcrowding
+
+### **Health Score — 40% Weight**
+
+* AMS probability
+* Temperature stability
+* Fatigue risk
+* Hydration deficit
+
+### **Fraud Score — 20% Weight**
+
+* UPI pattern validation
+* Invoice authenticity
+* Scam indicators
