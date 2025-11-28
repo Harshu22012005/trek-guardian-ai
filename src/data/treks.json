@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Kalsubai",
+    "altitude": 1646,
+    "difficulty": "Hard",
+    "location": "Western Ghats, Maharashtra",
+    "duration": "6-8 hours"
+  },
+  {
+    "name": "Rajmachi",
+    "altitude": 827,
+    "difficulty": "Easy",
+    "location": "Lonavala, Maharashtra",
+    "duration": "3-4 hours"
+  },
+  {
+    "name": "Harischandragad",
+    "altitude": 1424,
+    "difficulty": "Medium",
+    "location": "Western Ghats, Maharashtra",
+    "duration": "5-7 hours"
+  },
+  {
+    "name": "Sinhagad",
+    "altitude": 1312,
+    "difficulty": "Easy",
+    "location": "Pune, Maharashtra",
+    "duration": "2-3 hours"
+  },
+  {
+    "name": "Sandhan Valley",
+    "altitude": 1350,
+    "difficulty": "Medium",
+    "location": "Igatpuri, Maharashtra",
+    "duration": "4-6 hours"
+  }
+]
