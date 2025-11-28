@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Shield, Heart, AlertTriangle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NeuCard } from "@/components/NeuCard";
+import logo from "@/assets/xplorevo-logo.jpg";
 
 const Index = () => {
   const features = [
@@ -9,30 +10,40 @@ const Index = () => {
       icon: Shield,
       title: "Truth Check",
       description: "AI-powered misinformation detection for trek images and content",
-      color: "text-cyber-blue",
+      color: "text-primary",
       link: "/truth-check",
     },
     {
       icon: Heart,
       title: "Health Predictor",
       description: "Assess altitude risks, AMS probability, and health safety",
-      color: "text-neon-green",
+      color: "text-primary",
       link: "/health-check",
     },
     {
       icon: AlertTriangle,
       title: "Fraud Detector",
       description: "Scan invoices, UPI IDs, and bookings for scams",
-      color: "text-yellow-400",
+      color: "text-primary",
       link: "/fraud-check",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header with Logo */}
+      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Xplorevo Logo" className="w-10 h-10 rounded-lg shadow-lg" />
+            <span className="text-xl font-bold text-primary">Xplorevo</span>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-block">
@@ -40,8 +51,8 @@ const Index = () => {
                 AI-Powered Trek Safety
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyber-blue via-primary to-neon-green bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
-              Xplorevo's Adventure Guardian AI
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground">
+              Adventure Guardian AI
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Verify trek information, assess health risks, and detect fraud before your adventure begins.
@@ -90,7 +101,7 @@ const Index = () => {
               with actionable recommendations for your trek.
             </p>
             <Link to="/final-score">
-              <Button size="lg" className="bg-gradient-to-r from-cyber-blue to-neon-green hover:opacity-90 transition-opacity text-white font-semibold px-8 py-6 text-lg">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg shadow-lg">
                 View Final Score
               </Button>
             </Link>
