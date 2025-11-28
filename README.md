@@ -278,9 +278,3 @@ npm run dev
 * UPI pattern validation
 * Invoice authenticity
 * Scam indicators
-
----
-
-## 🏁 End
-
-This README contains everything needed for building, testing, and showcasing the hackathon project.
