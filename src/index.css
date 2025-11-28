@@ -8,54 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Xplorevo Adventure Tech Theme */
-    --background: 220 31% 7%;
-    --foreground: 210 20% 96%;
+    /* Professional Corporate Theme */
+    --background: 220 25% 12%;
+    --foreground: 210 20% 98%;
 
-    --card: 220 28% 10%;
-    --card-foreground: 210 20% 96%;
+    --card: 220 20% 15%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 220 31% 8%;
-    --popover-foreground: 210 20% 96%;
+    --popover: 220 20% 15%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 216 100% 60%;
+    --primary: 4 100% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 210 20% 96%;
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 220 20% 14%;
-    --muted-foreground: 215 15% 60%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 158 100% 62%;
-    --accent-foreground: 220 31% 7%;
+    --accent: 4 100% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 15%;
-    --ring: 216 100% 60%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 4 100% 65%;
 
     --radius: 0.75rem;
 
-    /* Custom adventure theme colors */
-    --deep-navy: 220 31% 7%;
-    --cyber-blue: 216 100% 60%;
-    --neon-green: 158 100% 62%;
-    --tech-gray: 220 20% 15%;
-    --soft-white: 210 20% 96%;
+    /* Custom corporate colors */
+    --deep-navy: 220 25% 12%;
+    --coral-red: 4 100% 65%;
+    --white-text: 210 20% 98%;
+    --gray-card: 220 20% 15%;
+    --gray-muted: 220 15% 20%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(216 100% 60% / 0.2), hsl(158 100% 62% / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(220 28% 12%), hsl(220 28% 8%));
-    --gradient-cyber: linear-gradient(90deg, hsl(216 100% 60%), hsl(158 100% 62%));
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(4 100% 65% / 0.15), hsl(220 25% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 20% 16%), hsl(220 20% 14%));
+    --gradient-accent: linear-gradient(90deg, hsl(4 100% 65%), hsl(4 100% 55%));
 
-    /* Neumorphic shadows */
-    --shadow-neu-light: 8px 8px 16px hsl(220 31% 4%), -8px -8px 16px hsl(220 28% 14%);
-    --shadow-neu-inset: inset 4px 4px 8px hsl(220 31% 4%), inset -4px -4px 8px hsl(220 28% 14%);
-    --shadow-glow-blue: 0 0 30px hsl(216 100% 60% / 0.4);
-    --shadow-glow-green: 0 0 30px hsl(158 100% 62% / 0.4);
+    /* Subtle shadows */
+    --shadow-neu-light: 8px 8px 16px hsl(220 25% 8%), -8px -8px 16px hsl(220 20% 18%);
+    --shadow-neu-inset: inset 4px 4px 8px hsl(220 25% 8%), inset -4px -4px 8px hsl(220 20% 18%);
+    --shadow-glow-primary: 0 0 20px hsl(4 100% 65% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
