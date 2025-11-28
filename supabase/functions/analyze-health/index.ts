@@ -77,7 +77,7 @@ serve(async (req) => {
           "X-Title": "Xplorevo Adventure Guardian"
         },
         body: JSON.stringify({
-          model: "google/gemini-flash-1.5",
+          model: "google/gemini-2.5-flash",
           messages: [
             { role: "user", content: prompt }
           ],
