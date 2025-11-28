@@ -68,11 +68,21 @@ const FraudCheck = () => {
         title: "Fraud Check Complete",
         description: "Your fraud assessment is ready",
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error checking fraud:", error);
+      let errorMessage = "Failed to analyze fraud risk. Please try again.";
+      
+      if (error?.message?.includes("402")) {
+        errorMessage = "Insufficient API credits. Please add credits to your OpenRouter account at https://openrouter.ai/settings/credits";
+      } else if (error?.message?.includes("429")) {
+        errorMessage = "Rate limit exceeded. Please wait a moment and try again.";
+      } else if (error?.message?.includes("401")) {
+        errorMessage = "Invalid API key. Please check your OpenRouter API key.";
+      }
+      
       toast({
         title: "Check Failed",
-        description: "Failed to analyze fraud risk. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
