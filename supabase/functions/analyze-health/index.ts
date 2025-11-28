@@ -20,10 +20,10 @@ serve(async (req) => {
 
   try {
     const { trekName, altitude } = await req.json();
-    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
 
-    if (!GEMINI_API_KEY) {
-      throw new Error("GEMINI_API_KEY is not configured");
+    if (!LOVABLE_API_KEY) {
+      throw new Error("LOVABLE_API_KEY is not configured");
     }
 
     let trekInfo = "";
@@ -67,17 +67,17 @@ serve(async (req) => {
     Base the health score on overall safety, with lower individual risk percentages contributing to a higher health score.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
+      "https://ai.gateway.lovable.dev/v1/chat/completions",
       {
         method: "POST",
         headers: {
+          "Authorization": `Bearer ${LOVABLE_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          contents: [
-            {
-              parts: [{ text: prompt }],
-            },
+          model: "google/gemini-2.5-flash",
+          messages: [
+            { role: "user", content: prompt }
           ],
         }),
       }
@@ -85,12 +85,12 @@ serve(async (req) => {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Gemini API error:", response.status, errorText);
-      throw new Error(`Gemini API error: ${response.status}`);
+      console.error("Lovable AI error:", response.status, errorText);
+      throw new Error(`Lovable AI error: ${response.status}`);
     }
 
     const data = await response.json();
-    const text = data.candidates[0].content.parts[0].text;
+    const text = data.choices[0].message.content;
     
     // Extract JSON from response
     const jsonMatch = text.match(/\{[\s\S]*\}/);
