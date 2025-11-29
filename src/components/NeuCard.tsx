@@ -12,17 +12,13 @@ export const NeuCard = ({ children, className, hover = false, glow = false }: Ne
   return (
     <div
       className={cn(
-        "rounded-xl p-6 bg-card backdrop-blur-sm",
-        "border border-border/50",
-        "shadow-lg",
-        hover && "transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl",
-        glow && "animate-glow-pulse",
+        "rounded-xl p-6 bg-card",
+        "border border-border",
+        hover && "transition-all duration-300 hover:shadow-xl",
         className
       )}
       style={{
-        boxShadow: glow
-          ? "var(--shadow-neu-light), var(--shadow-glow-blue)"
-          : "var(--shadow-neu-light)",
+        boxShadow: "var(--shadow-card)",
       }}
     >
       {children}

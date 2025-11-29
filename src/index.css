@@ -8,7 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Professional Corporate Theme */
+    /* Light Theme - Professional White Background */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 4 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 4 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 4 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --coral-red: 4 100% 65%;
+
+    /* Professional shadows */
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.1), 0 1px 2px hsl(0 0% 0% / 0.06);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark Theme */
     --background: 220 25% 12%;
     --foreground: 210 20% 98%;
 
@@ -37,28 +79,8 @@ All colors MUST be HSL.
     --input: 220 15% 25%;
     --ring: 4 100% 65%;
 
-    --radius: 0.75rem;
-
-    /* Custom corporate colors */
-    --deep-navy: 220 25% 12%;
-    --coral-red: 4 100% 65%;
-    --white-text: 210 20% 98%;
-    --gray-card: 220 20% 15%;
-    --gray-muted: 220 15% 20%;
-
-    /* Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(4 100% 65% / 0.15), hsl(220 25% 12%));
-    --gradient-card: linear-gradient(145deg, hsl(220 20% 16%), hsl(220 20% 14%));
-    --gradient-accent: linear-gradient(90deg, hsl(4 100% 65%), hsl(4 100% 55%));
-
-    /* Subtle shadows */
-    --shadow-neu-light: 8px 8px 16px hsl(220 25% 8%), -8px -8px 16px hsl(220 20% 18%);
-    --shadow-neu-inset: inset 4px 4px 8px hsl(220 25% 8%), inset -4px -4px 8px hsl(220 20% 18%);
-    --shadow-glow-primary: 0 0 20px hsl(4 100% 65% / 0.3);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Dark theme shadows */
+    --shadow-card: 8px 8px 16px hsl(220 25% 8%), -8px -8px 16px hsl(220 20% 18%);
   }
 }
 

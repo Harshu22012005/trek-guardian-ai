@@ -102,7 +102,7 @@ const FraudCheck = () => {
 
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-destructive bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               Fraud & Scam Detector
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -156,7 +156,7 @@ const FraudCheck = () => {
               <Button
                 onClick={handleCheck}
                 disabled={loading || (!invoiceFile && !upiId && !phoneNumber)}
-                className="w-full bg-gradient-to-r from-yellow-400 to-destructive hover:opacity-90 transition-opacity"
+                className="w-full"
                 size="lg"
               >
                 {loading ? (
@@ -180,16 +180,16 @@ const FraudCheck = () => {
 
                 <div className={`p-6 rounded-xl text-center ${
                   result.isSafe
-                    ? "bg-neon-green/10 border-2 border-neon-green"
+                    ? "bg-primary/10 border-2 border-primary"
                     : "bg-destructive/10 border-2 border-destructive"
                 }`}>
                   {result.isSafe ? (
-                    <CheckCircle className="w-12 h-12 mx-auto mb-3 text-neon-green" />
+                    <CheckCircle className="w-12 h-12 mx-auto mb-3 text-primary" />
                   ) : (
                     <ShieldAlert className="w-12 h-12 mx-auto mb-3 text-destructive" />
                   )}
                   <h3 className={`text-2xl font-bold ${
-                    result.isSafe ? "text-neon-green" : "text-destructive"
+                    result.isSafe ? "text-primary" : "text-destructive"
                   }`}>
                     {result.isSafe ? "Appears Safe" : "Warning: Potential Fraud"}
                   </h3>
