@@ -92,7 +92,7 @@ const HealthCheck = () => {
 
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-neon-green to-primary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               Health Risk Predictor
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -132,7 +132,7 @@ const HealthCheck = () => {
               <Button
                 onClick={handleCheck}
                 disabled={loading || (!trekName && !altitude)}
-                className="w-full bg-gradient-to-r from-neon-green to-primary hover:opacity-90 transition-opacity"
+                className="w-full"
                 size="lg"
               >
                 {loading ? (
@@ -162,7 +162,7 @@ const HealthCheck = () => {
                   </div>
 
                   <div className="p-4 rounded-lg bg-secondary/50 border border-border text-center">
-                    <Droplets className="w-8 h-8 mx-auto mb-2 text-cyber-blue" />
+                    <Droplets className="w-8 h-8 mx-auto mb-2 text-primary" />
                     <p className="text-sm text-muted-foreground mb-1">Dehydration Risk</p>
                     <p className="text-2xl font-bold text-foreground">{result.risks.hydration}%</p>
                   </div>

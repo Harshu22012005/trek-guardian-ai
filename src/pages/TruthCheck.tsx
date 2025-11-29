@@ -93,7 +93,7 @@ const TruthCheck = () => {
 
         <div className="space-y-8">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyber-blue to-neon-green bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
               Truth Check Scanner
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -112,7 +112,7 @@ const TruthCheck = () => {
               <Button
                 onClick={handleAnalyze}
                 disabled={!file || loading}
-                className="w-full bg-gradient-to-r from-cyber-blue to-primary hover:opacity-90 transition-opacity"
+                className="w-full"
                 size="lg"
               >
                 {loading ? (
@@ -142,7 +142,7 @@ const TruthCheck = () => {
                       className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50 border border-border"
                     >
                       {finding.status === "pass" ? (
-                        <CheckCircle className="w-5 h-5 text-neon-green flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       ) : (
                         <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                       )}

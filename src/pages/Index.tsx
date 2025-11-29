@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Shield, Heart, AlertTriangle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NeuCard } from "@/components/NeuCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/xplorevo-logo.jpg";
 
 const Index = () => {
@@ -32,11 +33,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header with Logo */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-border bg-card sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Xplorevo Logo" className="w-10 h-10 rounded-lg shadow-lg" />
-            <span className="text-xl font-bold text-primary">Xplorevo</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Xplorevo Logo" className="w-10 h-10 rounded-lg" />
+              <span className="text-xl font-bold text-primary">Xplorevo</span>
+            </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>
